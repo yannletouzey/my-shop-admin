@@ -1,0 +1,42 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+    <h1 class="main__title">Products</h1>
+    <div class="container">
+        <div class="product">
+            <h2><%= orders.lastname %></h2>
+            <p><%= orders.firstname %></p>
+            <p><%= orders.email %></p>
+            <% if (orders.address !== '' && orders.zip_code !== null) { %>
+                <p><%= orders.address %></p>
+                <p><%= orders.zipcode %></p>
+                <p><%= orders.city %></p>
+                <p><%= orders.country %></p>
+                <p><%= orders.phone %></p>
+            <% } else { %>
+                <%- include('../customer/contact_info') %>
+            <% } %>
+            <% if (products.length > 0) { %>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% products.forEach(function(product) { %>
+                            <tr>
+                                <td><%= product.title %></td>
+                                <td><%= product.quantity %></td>
+                                <td><%= product.price %></td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            <% } else { %>
+                <p>No products found</p>
+            <% } %>
+        </div>
+    </div>
+<%- include('../partials/footer') %>

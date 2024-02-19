@@ -1,0 +1,27 @@
+
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+    <form action="/admin/<% if (editing) { %>edit-product<% } else { %>add-product<% } %>" method="POST" class="form__add__product">
+        <fieldset class="form__add__product__fieldset">
+            <legend><% if (editing) { %> Edit product <% } else { %> Add new product <% } %></legend>
+            <label for="title" class="form__add__product__fieldset__label">Title</label>
+            <input type="text" name="title" id="title" class="form__add__product__fieldset__input" value="<%= editing && product.title ? product.title : '' %>" placeholder="title">
+            <label for="type" class="form__add__product__fieldset__label">Type</label>
+            <input type="text" name="type" id="type" class="form__add__product__fieldset__input" value="<%= editing && product.type ? product.type : '' %>" placeholder="type">
+            <label for="name" class="form__add__product__fieldset__label">Name</label>
+            <input type="text" name="name" id="name" class="form__add__product__fieldset__input" value="<%= editing && product.name ? product.name : '' %>" placeholder="name">
+            <label for="price" class="form__add__product__fieldset__label">Price</label>
+            <input type="number" name="price" id="price" class="form__add__product__fieldset__input" step="0.01" value="<%= editing && product.price ? product.price : '' %>" placeholder="price">
+            <label for="quantity" class="form__add__product__fieldset__label">Quantity</label>
+            <input type="number" name="quantity" id="quantity" class="form__add__product__fieldset__input" step="1" value="<%= editing && product.quantity ? product.quantity : '' %>" placeholder="quantity">
+            <label for="img" class="form__add__product__fieldset__label">Image</label>
+            <input type="text" name="img_url" id="img_url" class="form__add__product__fieldset__input" value="<%= editing && product.img_url ? product.img_url : '' %>" placeholder="img">
+            <label for="description" class="form__add__product__fieldset__label">Description</label>
+            <textarea name="description" id="description" class="form__add__product__fieldset__textarea" cols="30" rows="10" placeholder="Small description"><%= editing && product.description ? product.description : '' %></textarea>
+            <% if (editing) { %>
+                <input type="hidden" value="<%= product.id %>" name="id">
+            <% } %>
+            <button type="submit" class="form__add__product__fieldset__button"><% if (editing) { %> Edit product <% } else { %> Add new product <% } %></button>
+        </fieldset>
+    </form>
+<%- include('../partials/footer') %>

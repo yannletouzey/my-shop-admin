@@ -1,0 +1,35 @@
+<nav class="header__navigation">
+  <ul class="header__navigation__list">
+    <li class="header__navigation__list__li">
+      <a href="/" class="<%= path === '/' ? 'link-active header__navigation__list__li__a' : 'header__navigation__list__li__a' %>">Shop</a>
+    </li>
+    <li class="header__navigation__list__li">
+      <a href="/products" class="<%= path === '/products' ? 'link-active header__navigation__list__li__a' : 'header__navigation__list__li__a' %>">Products</a>
+    </li>
+    <% if (!locals.isLoggedIn) { %>
+      <li class="header__navigation__list__li">
+        <a href="/login" class="<%= path === '/login' ? 'link-active header__navigation__list__li__a' : 'header__navigation__list__li__a' %>">Login</a>
+      </li>
+    <% } %>
+
+    <li class="header__navigation__list__li">
+      <a href="/customer/cart" class="<%= path === '/customer/cart' ? 'link-active header__navigation__list__li__a' : 'header__navigation__list__li__a' %>">Cart</a>
+    </li>
+    <li class="header__navigation__list__li">
+      <a href="/orders" class="<%= path === '/orders' ? 'link-active header__navigation__list__li__a' : 'header__navigation__list__li__a' %>">Orders</a>
+    </li>
+    <li class="header__navigation__list__li">
+      <a href="/admin/add-product" class="<%= path === '/admin/handle-product' ? 'link-active header__navigation__list__li__a' : 'header__navigation__list__li__a' %>">Add product</a>
+    </li>
+    <li class="header__navigation__list__li">
+      <a href="/admin/products" class="<%= path === '/admin/products' ? 'link-active header__navigation__list__li__a' : 'header__navigation__list__li__a' %>">Admin product</a>
+    </li>
+    <li class="header__navigation__list__li">
+      <a href="/checkout" class="<%= path === '/checkout' ? 'link-active header__navigation__list__li__a' : 'header__navigation__list__li__a' %>">Checkout</a>
+    </li>
+
+    <li class="header__navigation__list__li">
+      <a href="/signup" class="<%= path === '/signup' ? 'link-active header__navigation__list__li__a' : 'header__navigation__list__li__a' %>">Signup</a>
+    </li>
+  </ul>
+</nav>

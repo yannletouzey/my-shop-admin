@@ -1,0 +1,13 @@
+<%- include('../partials/head') %>
+    <header class="header">
+        <nav class="header__navigation">
+            <ul class="header__navigation__list">
+                <li class="header__navigation__list__li">
+                    <a href="/" class="<%= path === '/' ? 'link-active header__navigation__list__li__a' : 'header__navigation__list__li__a' %>">Shop</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <p>Thank you for your registration</p>
+    <p>Please check your email to confirm your account <b><%= email %></b></p>
+<%- include('../partials/footer') %>

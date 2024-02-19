@@ -1,0 +1,33 @@
+<article class="article">
+    <header class="article__header">
+        <div class="article__header__img__container">
+            <img src="<%= product.img_url ? product.img_url : '/img/default.jpg' %>" alt="">
+        </div>
+        <h2 class="article__header__title">
+            <%= product.title %>
+        </h2>
+    </header>
+    <div class="article__desc">
+        <p class="article__desc__price">
+            <span>Price:</span>
+            <%= product.price ? product.price : 'No price' %>
+        </p>
+        <p class="article__desc__desc">
+            <span>Description:</span>
+            <%= product.description ? product.description : 'No description' %>
+        </p>
+    </div>
+    <div class="article__footer">
+        <% if (path === '/customer/cart') { %>
+            <form action="/cart" method="POST" class="form__remove">
+                <button type="submit">Remove from cart</button>
+                <input type="hidden" name="id" class="hidden" value="<%= product.id %>">
+            </form>
+        <% } else { %>
+            <form action="/cart" method="POST" class="article__footer__form__add">
+                <button type="submit">Add to cart</button>
+                <input type="hidden" name="id" class="hidden" value="<%= product.id %>">
+            </form>
+        <% } %>
+    </div>
+</article>

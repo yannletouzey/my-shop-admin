@@ -1,0 +1,76 @@
+            ##### A FAIRE #####
+
+GLOBAL
+    CONNEXION ADMIN/UTILISATEUR
+
+
+ADMIN
+    AJOUT DE PRODUIT
+        - ajout de l'id de l'admin
+        - donner la possibilité d'upload une ou des images produit
+        - à l'ajout du prix, avoir la possibilité de mettre une promotion sur celui-ci et donc de barré l'ancien prix et ajouté un tag du pourcentage de promotion
+
+
+
+UTILISATEUR
+    INSCRIPTION 
+        - envoyé un email pour confirmer son inscription
+
+    GLOBAL
+        HEADER
+            - le panier ne doit s'affiché seulement si il est connecter
+
+
+
+
+            ##### FAIT #####
+
+GLOBAL
+    PANIER
+        - ajouter les informations du panier
+            - les produits
+            - le prix total du panier
+
+ADMIN
+    PRODUIT
+        AJOUT
+            - ajout de l'id de l'admin
+            - l'ajout d'une url pour l'image est sécurisé avec validator. 
+                -si l'image n'est pas une url, une image par defaut est mise à ça place.
+
+        EDIT
+            - pour l'edition d'un produit, seul l'admin à l'origine du produit est autorisé à l'edité.
+
+        SUPPRESSION
+            ATTENTION à la suppression d'un produit ça le supprime aussi des paniers
+
+
+UTILISATEUR
+    COMPTE
+        FORMULAIRE D'INSCIPTION 
+            - id
+            - email
+            - password
+            le reste n'est pas obligatoire à l'inscription mais le sera pour la validation du panier
+                - lastname
+                - firstname
+                - adresse
+                - telephone
+
+        SECURISE L'INSCRIPTION
+            - password solide
+            - confirmation email + password
+            - erreur en cas d'email non conforme ou different de l'email de confirmation, pareil pour le password
+
+        INSCRIPTION COMPLETE
+            - redirection vers une page avec un message stipulant que la creation c'est bien passé et qu'un message va etre envoyé à cette email
+
+    ARTICLE
+        AJOUT
+            - si l'article est dejà dans le panier update la quantité sinon creer une nouvelle entree dans la db cart_item
+            - a l'ajout d'un article, update le nombre d'article dispo dans la table product
+            - si l'article n'est plus dispo, le bouton "add to cart" n'apparait plus
+
+        SUPPRESSION
+            - update le panier dans la table "cart"
+            - update le nombre de produit disponible dans la table "product"

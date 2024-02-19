@@ -1,0 +1,35 @@
+<% for (let i = 0; i < products.length; i++) { %>
+    <article class="article">
+        <header class="article__header">
+            <div class="article__header__img__container">
+                <img src="<%= products[i].img_url ? products[i].img_url : '/img/default.jpg' %>" alt="">
+            </div>
+            <h2 class="article__header__title">
+                <%= products[i].title %>
+            </h2>
+        </header>
+        <div class="article__desc">
+            <p class="article__desc__price">
+                <span>Price:</span>
+                <%= products[i].price ? products[i].price + ' €' : 'No price' %>
+            </p>
+            <p class="article__desc__desc">
+                <span>Description:</span>
+                <%= products[i].description ? products[i].description : 'No description ...' %>
+            </p>
+            <p class="article__desc__available">
+                <span>Available:</span>
+                <%= products[i].quantity > 0 ? 'Yes' : 'No' %>
+            </p>
+        </div>
+        <div class="article__footer">
+            <a href="/product_detail/<%= products[i].id %>" class="article__footer__link__detail">Detail</a>
+            <% if (products[i].quantity > 0) { %>
+                <form action="/customer/cart" method="POST" class="article__footer__form__add">
+                    <button type="submit">Add to cart</button>
+                    <input type="hidden" name="id" class="hidden" value="<%= products[i].id %>">
+                </form>
+            <% } %>
+        </div>
+    </article>
+<% } %>

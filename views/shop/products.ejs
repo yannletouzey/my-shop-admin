@@ -1,0 +1,12 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+    <h1 class="main__title">Products</h1>
+    <p>List of all products (<%= products.length %>)</p>
+        <section class="main__article">
+        <% if (products.length > 0) { %>
+            <%- include('../partials/product_list') %>
+        <% } else { %>
+            <p>No products found</p>
+        <% } %>
+        </section>
+<%- include('../partials/footer') %>

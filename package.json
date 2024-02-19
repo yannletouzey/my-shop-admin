@@ -1,0 +1,29 @@
+{
+  "type": "module",
+  "name": "inline-shop-admin",
+  "version": "1.0.0",
+  "description": "Inline shop admin",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "sass": "node-sass -w --output-style compressed public/scss -o public/css"
+  },
+  "author": "Yzey",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^9.0.0",
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mysql2": "^3.6.5",
+    "pg": "^8.11.3",
+    "require-main-filename": "^2.0.0",
+    "sequelize": "^6.35.1",
+    "validator": "^13.11.0"
+  }
+}

@@ -1,0 +1,65 @@
+@import './vars';
+
+.burger {
+    border: none;
+    width: $size-burger;
+    height: $size-burger;
+    background-color: transparent;
+    position: absolute;
+    z-index: 100;
+    top: $offset-burger;
+    left: $offset-burger;
+    transition-duration: 0.5s;
+    span {
+        --height-span: 0.2rem;
+        &, &::before, &::after {
+            transition-duration: 0.5s;
+            transition-timing-function: cubic-bezier(.31,2,.83,.67);
+            width: $size-burger;
+            height: var(--height-span);
+            background-color: #fff;
+            position: absolute;
+            translate: -50% -50%;
+        }
+        &::before {
+            content: '';
+            border-radius: var(--height-span) var(--height-span) 0 0;
+            top: calc(var(--height-span) - var(--height-span) * 2);
+        }
+        &::after {
+            content: '';
+            top: calc(var(--height-span) * 2);
+            border-radius: 0 0 var(--height-span) var(--height-span);
+        }
+    }
+    &__is-close {
+    
+        &:hover span::before {
+            top: calc(var(--height-span) - var(--height-span) * 2 - (var(--height-span) / 2));
+        }
+    
+        &:hover span::after {
+            top: calc(var(--height-span) * 2 + (var(--height-span) / 2));
+        }
+    }
+    &__is-open {
+        left: $offset-burger-isopen;
+        rotate: 180deg;
+        span {
+            background-color: transparent;
+        }
+        span::before {
+            border-radius: 0;
+            top: calc(var(--height-span) / 2);
+            rotate: 45deg;
+        }
+        span::after {
+            border-radius: 0;
+            top: calc(var(--height-span) - var(--height-span) / 2);
+            rotate: -45deg;
+        }
+    }        
+    @media screen and (min-width: 950px) {
+        display: none;
+    }
+}
