@@ -4,11 +4,7 @@ import session from 'express-session';
 import http from 'http';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import adminRoute from './routes/admin.js';
-import authRouter from './routes/auth.js';
-import customerRouter from './routes/customer.js';
-import notFound from './routes/notFound.js';
-import shopRouter from './routes/shop.js';
+import router from './router.js';
 import addUserData from './middleware/addUserData.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -34,11 +30,7 @@ app.use((req, res, next) => {
 })
 
 // Router
-app.use(adminRoute)
-app.use(shopRouter)
-app.use(customerRouter)
-app.use(authRouter)
-app.use(notFound)
+app.use(router);
 app.use(addUserData);
 
 

@@ -53,23 +53,24 @@ const authController = {
     const email = req.body.email;
     const password = req.body.password;
     const user = await User.login(email, password);
-    if (user) {
+    if (user !== "error") {
       req.session.isLoggedIn = true;
       req.session.userId = user.id;
       req.session.userEmail = user.email;
       res.status(200).redirect('/');
-
-      // req.session.isLoggedIn = true;
-      // req.session.user = login;
-      // res.status(200).redirect('/customer/products');
-
-      // if (pass) {
-      //     console.log('ok');
-      // } else {
-      //     console.log('error');
-      // }
+    } else {
+      res.status(401).render('shop/login', {
+        path: '/login', 
+        pageTitle: 'Login',
+        alert: 'Wrong email or password'
+      });
     }
+    
+  },
+  logout: (req, res) => {
+    req.session.destroy();
+    res.redirect('/');
   }
-};
+}
 
 export default authController;

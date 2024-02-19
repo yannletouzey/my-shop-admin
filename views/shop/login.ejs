@@ -1,5 +1,8 @@
 <%- include('../partials/head') %>
 <%- include('../partials/header') %>
-    <h1 class="main__title">Login</h1>
-    <%- include('../partials/connection') %>
+  <h1 class="main__title">Login</h1>
+  <% if (typeof alert !== 'undefined') { %>
+    <p class="message message--error" role="alert">Erreur : <%= alert %></p>
+  <% } %>
+  <%- include('../partials/connection') %>
 <%- include('../partials/footer') %>

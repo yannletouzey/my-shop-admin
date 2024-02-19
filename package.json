@@ -25,5 +25,10 @@
     "require-main-filename": "^2.0.0",
     "sequelize": "^6.35.1",
     "validator": "^13.11.0"
-  }
+  },
+  "git": "https://github.com/yannletouzey/my-shop-admin",
+  "keywords": [
+    "shop",
+    "admin"
+  ]
 }
