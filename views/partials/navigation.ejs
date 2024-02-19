@@ -15,10 +15,10 @@
     <% } %>
     <% if (locals.isLoggedIn) { %>
       <li class="header__navigation__list__li">
-        <a href="/admin/add-product" class="<%= path === '/admin/handle-product' ? 'link-active header__navigation__list__li__link' : 'header__navigation__list__li__link' %>">Add product</a>
+        <a href="/add-product" class="<%= path === '/add-product' ? 'link-active header__navigation__list__li__link' : 'header__navigation__list__li__link' %>">Add product</a>
       </li>
       <li class="header__navigation__list__li">
-        <a href="/products" class="<%= path === '/products' ? 'link-active header__navigation__list__li__link' : 'header__navigation__list__li__link' %>">Handle products</a>
+        <a href="/handle-products" class="<%= path === '/handle-products' ? 'link-active header__navigation__list__li__link' : 'header__navigation__list__li__link' %>">Handle products</a>
       </li>
       <li class="header__navigation__list__li">
         <button class="header__navigation__list__li__link" onclick="location.href='/logout'">Logout</button>

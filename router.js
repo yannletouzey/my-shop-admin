@@ -7,15 +7,14 @@ import authController from './controllers/auth.js';
 const router = express.Router()
 
 router.get('/admin', isLogged, adminController.getAdmin)
-router.get('/products', adminController.getAllProductsForAdmin)
-router.get('/add-product', adminController.getAddProduct)
-router.post('/add-product', adminController.postAddProduct)
+router.get('/handle-products', isLogged, adminController.getAllProductsForAdmin)
+router.get('/add-product', isLogged, adminController.getAddProduct)
+router.post('/add-product', isLogged, adminController.postAddProduct)
 router.get('/edit-product/:id', adminController.getEditProduct)
 router.post('/edit-product', adminController.postEditProduct)
 router.get('/delete-product/:id', adminController.deleteProduct)
 
 router.get('/',  productController.getLastProduct);
-router.get('/products', productController.getProduct);
 router.get('/product_detail/:id', productController.getProductById);
 router.get('/checkout', (req, res) => {
     res.status(200).render('shop/checkout', {

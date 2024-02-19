@@ -1,68 +1,68 @@
 @import '_vars.scss';
 
 .header {
+  width: 100%;
+  background-color: $bg-color-fushia;
+  &__title {
+    display: flex;
     width: 100%;
+    justify-content: space-between;
+  }
+  h1 {
+    margin: 0.5rem 1rem;
+    color: $text-color-white;
+    display: flex;
+    align-items: center;
+    @media screen and (min-width: 950px) {
+      margin-left: 3rem;
+    }
+  }
+  &__navigation {
     background-color: $bg-color-fushia;
-    &__title {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-    }
-    h1 {
-        margin: 0.5rem 1rem;
-        color: $text-color-white;
-        display: flex;
-        align-items: center;
-        @media screen and (min-width: 950px) {
-            margin-left: 3rem;
-        }
-    }
-    &__navigation {
+    width: 100%;
+    &__list { 
+      display: flex;
+      flex-wrap: wrap;
+      &__li {
+        width: 50%;
+        min-width: 8rem;
         background-color: $bg-color-fushia;
-        width: 100%;
-            &__list {
-            display: flex;
-            flex-wrap: wrap;
-            &__li {
-                width: 50%;
-                min-width: 8rem;
-                background-color: $bg-color-fushia;
-                @media screen and (min-width: 500px) {
-                    width: 33%;
-                }
-                @media screen and (min-width: 600px) {
-                    width: 25%;
-                }
-                &__link {
-                    border: none;
-                    text-decoration: none;
-                    color: $text-color-white;
-                    display: flex;
-                    align-items: center;
-                    height: 100%;
-                    width: 100%;
-                    padding: 0.5rem;
-                    justify-content: center;
-                    border: $bg-color-fushia-hover 1px solid;
-                    background-color: $bg-color-fushia;
-                    span {
-                        font-weight: 100;
-                    }
-                }
-                &__a:hover {
-                    background-color: $bg-color-fushia-hover;
-                }
-                .link-active {
-                    color: $text-color-white;
-                    text-decoration-line: underline;
-                    text-decoration-color: $bg-color-fushia;
-                    text-decoration-thickness: 0.3rem;
-                    text-decoration-skip: edges;
-                }
-            }
+        @media screen and (min-width: 500px) {
+          width: 33%;
         }
-        &__is-open {
-            left: 0;
+        @media screen and (min-width: 600px) {
+          width: 25%;
         }
+        &__link {
+          border: none;
+          text-decoration: none;
+          color: $text-color-white;
+          display: flex;
+          align-items: center;
+          height: 100%;
+          width: 100%;
+          padding: 0.5rem;
+          justify-content: center;
+          border: $bg-color-fushia-hover 1px solid;
+          background-color: $bg-color-fushia;
+          span {
+            font-weight: 100;
+          }
+        }
+        &__a:hover {
+          background-color: $bg-color-fushia-hover;
+        }
+        .link-active {
+          color: $text-color-white;
+          text-decoration-line: underline;
+          text-decoration-color: $bg-color-fushia;
+          text-decoration-thickness: 0.3rem;
+          text-decoration-skip: edges;
+        }
+      }
     }
+    &__is-open {
+      left: 0;
+    }
+  }
 }
