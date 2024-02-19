@@ -27,7 +27,7 @@ class Product {
     return result.rows;
   }
   static async getLastProduct() {
-    const request = await client.query('SELECT * FROM product ORDER BY id DESC LIMIT 3');
+    const request = await client.query('SELECT * FROM product ORDER BY id DESC');
     return request.rows;
   }
   async addProduct() {

@@ -17,15 +17,20 @@
             <%= product.description ? product.description : 'No description' %>
         </p>
     </div>
+    <p class="article__desc__available">
+      <span>Available:</span>
+      <%= product.quantity > 0 ? 'Yes' : 'No' %>
+    </p>
+    <% if (product.quantity > 0) { %>
+      <p class="article__desc__available">
+        <span>Quantity: <%= product.quantity %></span>
+      </p>
+    <% } %>
+  </div>
     <div class="article__footer">
         <% if (path === '/customer/cart') { %>
             <form action="/cart" method="POST" class="form__remove">
                 <button type="submit">Remove from cart</button>
-                <input type="hidden" name="id" class="hidden" value="<%= product.id %>">
-            </form>
-        <% } else { %>
-            <form action="/cart" method="POST" class="article__footer__form__add">
-                <button type="submit">Add to cart</button>
                 <input type="hidden" name="id" class="hidden" value="<%= product.id %>">
             </form>
         <% } %>

@@ -33,15 +33,18 @@
                 @media screen and (min-width: 600px) {
                     width: 25%;
                 }
-                &__a {
+                &__link {
+                    border: none;
                     text-decoration: none;
                     color: $text-color-white;
                     display: flex;
                     align-items: center;
                     height: 100%;
+                    width: 100%;
                     padding: 0.5rem;
                     justify-content: center;
                     border: $bg-color-fushia-hover 1px solid;
+                    background-color: $bg-color-fushia;
                     span {
                         font-weight: 100;
                     }

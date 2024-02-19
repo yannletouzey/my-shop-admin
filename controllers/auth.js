@@ -65,7 +65,6 @@ const authController = {
         alert: 'Wrong email or password'
       });
     }
-    
   },
   logout: (req, res) => {
     req.session.destroy();
